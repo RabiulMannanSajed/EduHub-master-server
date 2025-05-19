@@ -11,17 +11,16 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    phone: {
+    photoUrl: {
+      type: String,
+    },
+    varsityName: {
       type: String,
       required: true,
     },
-    address: {
+    departmentName: {
       type: String,
-    },
-    role: {
-      type: String,
-      enum: ["admin", "worker", "manager"],
-      default: "worker",
+      required: true,
     },
     password: {
       type: String,
@@ -31,12 +30,6 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    workingList: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "WorkItem", // This assumes your work model is named "WorkItem"
-      },
-    ],
   },
   {
     timestamps: true,
