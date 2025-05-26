@@ -14,13 +14,13 @@ const SellSchema = new Schema(
       required: true,
       trim: true,
     },
-    author: {
+    authorOrBrand: {
       type: String,
       required: true,
       trim: true,
     },
     price: {
-      type: Number,
+      type: String,
       required: true,
       min: 0,
     },
@@ -31,7 +31,7 @@ const SellSchema = new Schema(
     },
     item: {
       type: String,
-      enum: ["book", "device"],
+      enum: ["Book", "Device"],
       required: true,
     },
     imageURL: {
