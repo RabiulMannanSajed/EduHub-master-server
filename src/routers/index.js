@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { UserRoutes } from "../modules/user/user.route.js";
+import { AuthRouter } from "../modules/auth/auth.router.js";
 
 const router = Router();
 
@@ -9,10 +10,10 @@ const moduleRouters = [
     route: UserRoutes,
   },
 
-  // {
-  //   path: "/auth",
-  //   route: AuthRouter,
-  // },
+  {
+    path: "/auth",
+    route: AuthRouter,
+  },
 ];
 moduleRouters.forEach((route) => router.use(route.path, route.route));
 
