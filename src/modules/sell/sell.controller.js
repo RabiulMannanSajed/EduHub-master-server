@@ -18,6 +18,19 @@ export const createSellPost = async (req, res, next) => {
   }
 };
 
+export const getAllItems = async (req, res, next) => {
+  try {
+    const result = await getAllItemFormDB();
+    res.status(200).json({
+      success: true,
+      message: "All books get successfully",
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const getAllBooks = async (req, res, next) => {
   try {
     const result = await getBooksFromDB();

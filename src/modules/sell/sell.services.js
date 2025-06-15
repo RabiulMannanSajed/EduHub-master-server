@@ -5,6 +5,11 @@ export const createSellIntoDB = async (sellData) => {
   return newSellProduct;
 };
 
+export const getAllItemFormDB = async () => {
+  const items = await Sell.find();
+  return items;
+};
+
 export const getBooksFromDB = async () => {
   try {
     const books = await Sell.find({
