@@ -1,11 +1,11 @@
-import { Course } from "./course.model";
+import { Course } from "./course.model.js";
 
 export const createCoursesSellIntoDB = async (sellData) => {
-  const newSellProduct = await Course.create(sellData);
-  return newSellProduct;
+  const newSellCourse = await Course.create(sellData);
+  return newSellCourse;
 };
 
-export const getAllItemFormDB = async () => {
-  const items = await Course.find();
-  return items;
+export const getAllCorsesItemFormDB = async () => {
+  const course = await Course.find();
+  return course;
 };
