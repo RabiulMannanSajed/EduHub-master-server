@@ -1,7 +1,12 @@
+import {
+  createFreelanceIntoDB,
+  getAllFreelanceFormDB,
+} from "./freelancing.service.js";
+
 export const createFreelancing = async (req, res, next) => {
   try {
     const userInfo = req.body;
-    const result = await createSellIntoDB(userInfo);
+    const result = await createFreelanceIntoDB(userInfo);
     res.status(200).json({
       success: true,
       message: "Sell post updated successfully",
@@ -13,7 +18,7 @@ export const createFreelancing = async (req, res, next) => {
 };
 export const getAllFreelancing = async (req, res, next) => {
   try {
-    const result = await getAllItemFormDB();
+    const result = await getAllFreelanceFormDB();
     res.status(200).json({
       success: true,
       message: "All books get successfully",
