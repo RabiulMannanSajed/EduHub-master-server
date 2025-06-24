@@ -1,12 +1,11 @@
-import { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 const CourseSchema = new Schema({
   // add this when user perfectly
-  // userID: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "User", // Reference to the User model
-  //   required: true,
-  // },
+  userID: {
+    type: Schema.Types.ObjectId,
+    ref: "User", // Reference to the User model
+  },
   title: {
     type: String,
     required: true,
@@ -24,6 +23,15 @@ const CourseSchema = new Schema({
   courseImage: {
     type: String,
   },
+  meet: {
+    type: String,
+  },
+  videos: [
+    {
+      video: { type: String, required: true },
+      min: { type: String, required: true },
+    },
+  ],
 });
 
 export const Course = model("course", CourseSchema);

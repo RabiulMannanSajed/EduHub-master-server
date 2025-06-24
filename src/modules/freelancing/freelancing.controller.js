@@ -16,6 +16,7 @@ export const createFreelancing = async (req, res, next) => {
     next(error);
   }
 };
+
 export const getAllFreelancing = async (req, res, next) => {
   try {
     const result = await getAllFreelanceFormDB();

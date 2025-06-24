@@ -32,17 +32,10 @@ export const getThoseBloodDonnerFromDB = async () => {
 };
 
 export const updateUserInDB = async (id, updatedData) => {
-  // Prevent updating email and password
   delete updatedData.email;
   delete updatedData.password;
   delete updatedData.isDeleted;
-  delete updatedData.role;
-  delete updatedData.workingList;
-
-  // checking the user info
-  console.log("userId", id);
-  console.log("userData", updatedData);
-
+  console.log(id, updatedData);
   const existingUser = await User.findOne({ _id: id, isDeleted: false });
 
   if (!existingUser) {

@@ -37,6 +37,12 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    skills: [
+      {
+        name: { type: String, required: true },
+        label: { type: String, required: true },
+      },
+    ],
   },
   {
     timestamps: true,
