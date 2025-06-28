@@ -33,6 +33,9 @@ const userSchema = new Schema(
     Address: {
       type: String,
     },
+    role: {
+      type: String,
+    },
     isDeleted: {
       type: Boolean,
       default: false,
