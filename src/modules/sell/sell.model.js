@@ -2,11 +2,11 @@ import { model, Schema } from "mongoose";
 
 const SellSchema = new Schema({
   // add this when user perfectly
-  // userID: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "User", // Reference to the User model
-  //   required: true,
-  // },
+  userID: {
+    type: Schema.Types.ObjectId,
+    ref: "User", // Reference to the User model
+    required: true,
+  },
 
   title: {
     type: String,

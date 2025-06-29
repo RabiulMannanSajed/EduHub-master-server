@@ -10,6 +10,7 @@ import { JObRouter } from "../modules/job/job.route.js";
 import { JObApplicationRouter } from "../modules/JobApply/JobApply.route.js";
 import { LikeRouter } from "../modules/like/like.route.js";
 import { CommentRouter } from "../modules/comment/comment.route.js";
+import { payment } from "../modules/hire/hire.route.js";
 
 const router = Router();
 
@@ -61,8 +62,8 @@ const moduleRouters = [
   },
 
   {
-    path: "/comments",
-    route: CommentRouter,
+    path: "/orders",
+    route: payment,
   },
 ];
 moduleRouters.forEach((route) => router.use(route.path, route.route));
